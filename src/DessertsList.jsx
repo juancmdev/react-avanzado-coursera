@@ -11,7 +11,7 @@ const DessertsList = ({ data }) => {
 
   const dessertslist = lowCaloriesDesserts.map((dessert) => {
     const text = `${dessert.name} - ${dessert.calories} cals`;
-    return <li>{text}</li>;
+    return <li key={dessert.id}>{text}</li>;
   });
 
   return (
