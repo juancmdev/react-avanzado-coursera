@@ -5,9 +5,11 @@ const DessertsList = ({ data }) => {
 
   const caloriesSort = data.sort(compareCalories);
 
-  console.log(caloriesSort);
+  const lowCaloriesDesserts = caloriesSort.filter((low) => {
+    return low.calories < 500;
+  });
 
-  const dessertslist = caloriesSort.map((dessert) => {
+  const dessertslist = lowCaloriesDesserts.map((dessert) => {
     const text = `${dessert.name} - ${dessert.calories} cals`;
     return <li>{text}</li>;
   });
